@@ -6,10 +6,7 @@ const Container = styled.div`
     height:100vh;
     display:flex;
     position:relative;
-    background-color:wheat;
-    align-items:center;
-    justify-content:center;
-
+    overflow:hidden;
 
 `
 const Arrow = styled.div`
@@ -28,53 +25,97 @@ const Arrow = styled.div`
     margin:auto;
     cursor:pointer;
     opacity:0.5;
+    z-index:2;
 `;
 
-
-
-const Slide = styled.div`
+const Wrapper = styled.div`
+    height:100%;
     display:flex;
-    align-items:center;
-`;
-const ImgContainer = styled.div`
-    flex:1;
-    height:60vh;
-    width: 100%;
-    maxWidth: 100vw;
-    background-color:#ffc4c4;
-    align-items:center;
-    justify-content:center;
-`;
-const Image = styled.img`
-    
-
+    transform:translateX(-200vw)
 `
 
+const Slide = styled.div`
+    width:100vw;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    background-color: #${props=>props.bg};
+`;
+const ImgContainer = styled.div`
+    height:100%;
 
+    flex=1;
+    
+`;
+const Image = styled.img`
+    height:200px;
+    width:"100%";
+    
+  
+
+`
 const InfoContainer = styled.div`
     flex:1;
+    padding:50px;
 `;
+
+const Title = styled.h1``
+const Desc = styled.p``
+const Button = styled.button``
 
 
 const Slider = () => {
-    return (
-        <Container>
-            <Arrow direction="left">
-                <ArrowLeftOutlined />
-            </Arrow>
-
-            <ImgContainer>
-                <Image src="img3.png" style={{ width: "100%", maxWidth: "60vh", margin: "auto" }}
-                ></Image>
-            </ImgContainer>
-            <InfoContainer></InfoContainer>
-
-            <Arrow direction="right">
-                <ArrowRightOutlined />
-            </Arrow>
-
-        </Container>
-    )
+    //const [slideIndex, setSlideIndex] = useState(0);
+    // const handleClick = (direction) => {
+        
+    // };
+  return (
+      <Container>
+          <Arrow >
+          <ArrowLeftOutlined/>
+          </Arrow>
+          <Wrapper>
+              <Slide bg="f5fafd">
+              <ImgContainer>
+                <Image src="img.jpeg"/>
+              </ImgContainer>
+                  <InfoContainer>
+                      <Title></Title>
+                      <Desc></Desc>
+                      <Button></Button>
+                  </InfoContainer>
+              </Slide>
+              <Slide bg="f5f1ed">
+              <ImgContainer>
+                <Image src="img.jpeg"/>
+              </ImgContainer>
+                  <InfoContainer>
+                      <Title></Title>
+                      <Desc></Desc>
+                      <Button></Button>
+                  </InfoContainer>
+              </Slide>
+              <Slide bg="fbf0f4">
+              <ImgContainer>
+                <Image src="img5.jpeg"/>
+              </ImgContainer>
+                  <InfoContainer>
+                      <Title></Title>
+                      <Desc></Desc>
+                      <Button></Button>
+                  </InfoContainer>
+                  </Slide>
+            </Wrapper>
+          <Arrow>
+          
+          <ArrowRightOutlined/>
+          </Arrow>
+          
+    </Container>
+  )
 }
 
 export default Slider
+
+
+
