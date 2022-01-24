@@ -1,97 +1,56 @@
 import { Badge } from '@material-ui/core';
-import { AddShoppingCartOutlined, Search} from '@material-ui/icons';
+import { AddShoppingCartOutlined, Search } from '@material-ui/icons';
 import React from 'react'
-import styled from 'styled-components'
 
-const Container = styled.div`
-    height:60px;
+const styles = {
+    searchBar : {
+        borderRadius : "4px",
+        outline : 'none',
+        paddingRight : '30px',
+        border : '1px solid rgba(0, 0, 0, 0.4)',
+    },
     
-`
-
-const Wrapper = styled.div`
-    padding: 10px 20px;
-    display:flex;
-    align-items:center;
-    justify-content: space-between; 
-    
-`
-const Left = styled.div`
-    flex:1;
-    display:flex;
-    align-items:center;
-` ;
-const Language = styled.span`
-    font-size: 14px;
-    cursor: pointer;
-
-`
-
-const SearchContainer = styled.div`
-    border: 0.5px solid lightgray;
-    display:flex;
-    align-items:center;
-    margin-left: 25px;
-    padding:5px;
-
-`
-const Input = styled.input`
-    border: none;
-
-`
-const Center = styled.div`
-    flex:1;
-    text-align:center;
-`;
-const Logo = styled.h1`
-    font-weight: bold;
-
-`;
-
-const Right = styled.div`
-    flex:1;
-    display:flex;
-    align-items:center;
-    justify-content: flex-end;
-` ;
-
-const MenuItem = styled.div`
-    font-size:14px;
-    cursor: pointer;
-    margin-left:25px;
-`
-
+    searchBtn : {
+        width : '50px',
+        marginLeft : '-50px',
+        cursor : 'pointer',
+    },
+}
 
 const Navbar = () => {
-  return (
-    <Container>
-      <Wrapper>
-          <Left>
-              <Language>
-
-
-
-              </Language>
-              <SearchContainer>
-                  <Input type="text"></Input>
-                  <Search style={{color:"gray",fontSize:16}}></Search>
-              </SearchContainer>
-          </Left>
-          <Center>
-              <Logo>PharmaCare</Logo>
-          </Center>
-          <Right>
-              <MenuItem>Register</MenuItem>
-              <MenuItem>Sign In </MenuItem>
-              <MenuItem>
-              <Badge badgeContent={4} color="secondary">
-                <AddShoppingCartOutlined/>
-            </Badge>
-
-              </MenuItem>
-          </Right>
-      </Wrapper>
-    </Container>
-  )
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container-fluid">
+                <a className="navbar-brand text-dark" href="#">PharmaCare</a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav ms-auto me-2 mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <a className="nav-link active" aria-current="page" href="#">Sign In</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link active" aria-current="page" href="#">Register</a>
+                        </li>
+                    </ul>
+                    <form onSubmit={
+                        event => {
+                            event.preventDefault();
+                            console.log('form submitted');
+                        }
+                    } className="w-25 d-flex align-items-center">
+                        <input className="w-100 me-2" style={styles.searchBar} />
+                        <Search style={styles.searchBtn} onClick={
+                            () => {
+                                console.log('form submitted');
+                            }
+                        } />
+                    </form>
+                </div>
+            </div>
+        </nav>
+    )
 }
 
 export default Navbar
