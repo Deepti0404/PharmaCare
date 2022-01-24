@@ -1,118 +1,73 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
+import { useState, useEffect } from "react";
 import styled from "styled-components"
+import { Button } from "@material-ui/core";
 
 const Container = styled.div`
-    width:100%;
-    height:100vh;
     display:flex;
-    position:relative;
-    overflow:hidden;
-
-`
-const Arrow = styled.div`
-    width:50px;
-    height:50px;
-    background-color:#fff7f7;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left: ${props => props.direction === "left" && "10px"};
-    right: ${props => props.direction === "right" && "10px"};
-    margin:auto;
-    cursor:pointer;
-    opacity:0.5;
-    z-index:2;
+    align-items : center;
+    justify-content : center;
 `;
 
 const Wrapper = styled.div`
-    height:100%;
+    height:60vh;
+    width:100%;
+    maxWidth:100vw;
     display:flex;
-    transform:translateX(-200vw)
-`
+    justify-content:sapce-between;
+    align-items:center;
+    background:black;
+`;
 
 const Slide = styled.div`
-    width:100vw;
-    height:100vh;
-    display:flex;
-    align-items:center;
-    background-color: #${props=>props.bg};
-`;
-const ImgContainer = styled.div`
-    height:100%;
-
-    flex=1;
-    
-`;
-const Image = styled.img`
-    height:200px;
-    width:"100%";
-    
-  
-
-`
-const InfoContainer = styled.div`
-    flex:1;
-    padding:50px;
+    background : ${props => props.bg};
+    height : 100%;
+    width : 100%;
+    display : flex;
+    align-items : center;
+    justify-content : center;
 `;
 
-const Title = styled.h1``
-const Desc = styled.p``
-const Button = styled.button``
-
+const styles = {
+    bannerImg: {
+        maxWidth: "100%",
+        maxHeight: "100%",
+    },
+}
 
 const Slider = () => {
-    //const [slideIndex, setSlideIndex] = useState(0);
-    // const handleClick = (direction) => {
-        
-    // };
-  return (
-      <Container>
-          <Arrow >
-          <ArrowLeftOutlined/>
-          </Arrow>
-          <Wrapper>
-              <Slide bg="f5fafd">
-              <ImgContainer>
-                <Image src="img.jpeg"/>
-              </ImgContainer>
-                  <InfoContainer>
-                      <Title></Title>
-                      <Desc></Desc>
-                      <Button></Button>
-                  </InfoContainer>
-              </Slide>
-              <Slide bg="f5f1ed">
-              <ImgContainer>
-                <Image src="img.jpeg"/>
-              </ImgContainer>
-                  <InfoContainer>
-                      <Title></Title>
-                      <Desc></Desc>
-                      <Button></Button>
-                  </InfoContainer>
-              </Slide>
-              <Slide bg="fbf0f4">
-              <ImgContainer>
-                <Image src="img5.jpeg"/>
-              </ImgContainer>
-                  <InfoContainer>
-                      <Title></Title>
-                      <Desc></Desc>
-                      <Button></Button>
-                  </InfoContainer>
-                  </Slide>
+    const picSrcs = [["img3.png", "#ffc4c4"], ["img5.jpeg", "#f8f8f8"], ["img2.png", "#ffc4c4"]]
+    // let index = 0;
+    const [index, setIndex] = useState(0)
+
+    return (
+        <Container>
+            <Button onClick={
+                () => {
+                    setIndex((index + 2) % 3);
+                    console.log(`prev ${index}`);
+                }
+            }>
+                <ArrowLeftOutlined />
+            </Button>
+
+            <Wrapper>
+                <Slide bg={picSrcs[index][1]}>
+                    <img style={styles.bannerImg} src={picSrcs[index][0]} />
+                </Slide>
             </Wrapper>
-          <Arrow>
-          
-          <ArrowRightOutlined/>
-          </Arrow>
-          
-    </Container>
-  )
+
+            <Button onClick={
+                () => {
+                    setIndex((index + 1) % 3);
+                    console.log(`next ${index}`);
+                }
+            }>
+                <ArrowRightOutlined />
+            </Button>
+
+        </Container>
+    )
 }
 
 export default Slider
