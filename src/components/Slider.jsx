@@ -1,76 +1,56 @@
-import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons"
-import { useState, useEffect } from "react";
-import styled from "styled-components"
-import { Button } from "@material-ui/core";
+import React from 'react'
 
-const Container = styled.div`
-    display:flex;
-    align-items : center;
-    justify-content : center;
-`;
-
-const Wrapper = styled.div`
-    height:60vh;
-    width:100%;
-    maxWidth:100vw;
-    display:flex;
-    justify-content:sapce-between;
-    align-items:center;
-    background:black;
-`;
-
-const Slide = styled.div`
-    background : ${props => props.bg};
-    height : 100%;
-    width : 100%;
-    display : flex;
-    align-items : center;
-    justify-content : center;
-`;
-
-const styles = {
-    bannerImg: {
-        maxWidth: "100%",
-        maxHeight: "100%",
+const styles={
+    imgban:{
+        height:'500px',
+        width:'100%',
     },
 }
-
 const Slider = () => {
-    const picSrcs = [["img3.png", "#ffc4c4"], ["img5.jpeg", "#f8f8f8"], ["img2.png", "#ffc4c4"]]
-    // let index = 0;
-    const [index, setIndex] = useState(0)
-
-    return (
-        <Container>
-            <Button onClick={
-                () => {
-                    setIndex((index + 2) % 3);
-                    console.log(`prev ${index}`);
-                }
-            }>
-                <ArrowLeftOutlined />
-            </Button>
-
-            <Wrapper>
-                <Slide bg={picSrcs[index][1]}>
-                    <img style={styles.bannerImg} src={picSrcs[index][0]} />
-                </Slide>
-            </Wrapper>
-
-            <Button onClick={
-                () => {
-                    setIndex((index + 1) % 3);
-                    console.log(`next ${index}`);
-                }
-            }>
-                <ArrowRightOutlined />
-            </Button>
-
-        </Container>
-    )
+  return (
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img7.jpeg" alt="img1" style={styles.imgban}/>
+      <div class="carousel-caption d-none d-md-block">
+       
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img5.jpeg" class="d-block w-100" alt="img2" style={styles.imgban}/>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img6.jpeg" class="d-block w-100" alt="img3" style={styles.imgban}/>
+      <div class="carousel-caption d-none d-md-block">
+        
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="img8.jpeg" class="d-block w-100" alt="img4" style={styles.imgban}/>
+      <div class="carousel-caption d-none d-md-block">
+       
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+  )
 }
 
 export default Slider
-
-
-
