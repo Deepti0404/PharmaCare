@@ -6,9 +6,6 @@ const styles={
 //   },
   divcardbody:{
       padding: '5px',
-      flex:'33.33%',
-      width:'33.33%',
-   
   },
   imgstyle:{
      height:'100px',
