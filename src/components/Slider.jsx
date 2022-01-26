@@ -15,27 +15,37 @@ const Slider = () => {
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
   </div>
+
+
+
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="img7.jpeg" alt="img1" style={styles.imgban}/>
+      <img src="ban44.jpeg" alt="img1" style={styles.imgban}/>
+
       <div class="carousel-caption d-none d-md-block">
        
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img5.jpeg" class="d-block w-100" alt="img2" style={styles.imgban}/>
+
+      <img src="ban5.jpeg" class="d-block w-100" alt="img2" style={styles.imgban}/>
+
       <div class="carousel-caption d-none d-md-block">
         
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img6.jpeg" class="d-block w-100" alt="img3" style={styles.imgban}/>
+
+      <img src="ban7.jpeg" class="d-block w-100" alt="img3" style={styles.imgban}/>
+
       <div class="carousel-caption d-none d-md-block">
         
       </div>
     </div>
     <div class="carousel-item">
-      <img src="img8.jpeg" class="d-block w-100" alt="img4" style={styles.imgban}/>
+
+      <img src="img6.jpeg" class="d-block w-100" alt="img4" style={styles.imgban}/>
+
       <div class="carousel-caption d-none d-md-block">
        
       </div>

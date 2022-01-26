@@ -1,53 +1,56 @@
+
 import React from 'react'
 
-const styles={
-//   *{
-//       box-sizing:'border-box',
-//   },
-  divcardbody:{
-      padding: '5px',
-  },
-  imgstyle:{
-     height:'100px',
-     width:'100px', 
-  },
 
-  divcard:{
-      display:'flex',
-  }
+const style={
+    imgtag:{
+           height:'225px',
+           width:'360px', 
+    }
 }
 
 const Cards = () => {
   return (
-<div class="card" style={styles.divcard}>
-
-
-  
-  <div class="card-body" style={styles.divcardbody}>
-  <img src="img9.jpeg" class="card-img-top" alt="..." style={styles.imgstyle}/>
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="row">
+  <div class="col-sm-4">
+    <div class="card m-4">
+      <div class="card-body">
+      <img src='card1.jpeg' style={style.imgtag}></img>
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
   </div>
 
- 
-  <div class="card-body" style={styles.divcardbody}>
-  <img src="img9.jpeg" class="card-img-top" alt="..." style={styles.imgstyle}/>
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+  <div class="col-sm-4">
+    <div class="card m-4">
+      <div class="card-body">
+          <img src='card2.jpeg' style={style.imgtag}></img>
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
   </div>
 
-  
-  <div class="card-body" style={styles.divcardbody}>
-  <img src="img9.jpeg" class="card-img-top" alt="..." style={styles.imgstyle}/>
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class="col-sm-4">
+    <div class="card m-4">
+      <div class="card-body">
+      <img src='card1.jpeg' style={style.imgtag}></img>
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
   </div>
 
 
 </div>
+
+
+
   )
 }
 
